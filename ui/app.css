@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600&family=Orbitron&family=Poppins:wght@600;700&display=swap');
+
+* {
+    color: white;
+    font-family: 'Inter';
+    transition: 0.2s;
+}
+
+body {
+    text-align: right;
+}
+
+#id,
+#p {
+    font-weight: 600;
+}
+
+i {
+    color: rgb(161, 161, 161);
+}
+
+.wrapper {
+    margin-right: 2vh;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2.5vh;
+    font-weight: 600;
+}
+
+.logo span {
+    color: rgb(0, 157, 255);
+}
+
+.p {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.2vh;
+}
+
+#laikas {
+    display: block;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+#men,
+#d,
+#savd,
+.date {
+    font-weight: 600;
+    font-size: 1.5vh;
+    color: rgb(161, 161, 161);
+}
+
+.logo {
+    height: 4vh;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <!--Credits: matttas.-->
+    <div class="fixed top-0 right-0 m-4">
+        <div class="flex flex-col items-end">
+          <div class="flex flex-col items-start mb-2">
+            <div class="flex items-center">
+              <h1 class="text-sm font-bold text-gray-500 mr-4 text-white">Žaidžia</h1>
+              <div class="flex items-center">
+                <h1 class="text-sm font-bold text-gray-500 mr-3 text-white">ID</h1>
+                <div class="flex items-center">
+                <img class="w-full h-8 rounded-full object-cover" src="logo.png" alt="">
+              </div>
+            </div>
+        </div>
+            <div class="flex items-center">
+              <p id="zaid" class="text-gray-500 font-semibold mr-5">iš 20</p>
+              <p id="id" class="text-gray-500 font-semibold mr-5">1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener('message', function(event) {
+          if (event.data.type === 'update') {
+            if (event.data.online) {
+              const onlineText = event.data.onlineText || 'iš 20';
+              const onlineElement = document.getElementById('zaid');
+              if (onlineElement) {
+                onlineElement.textContent = `${event.data.online} ${onlineText}`;
+              }
+            }
+            if (event.data.id) {
+              const idText = event.data.idText || '#';
+              const idElement = document.getElementById('id');
+              if (idElement) {
+                idElement.textContent = `${idText}${event.data.id}`;
+              }
+            }
+          }
+        });
+      </script>
+</body>
+</html>
